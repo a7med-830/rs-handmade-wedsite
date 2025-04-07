@@ -3,11 +3,16 @@
 }
 
 :root {
-    --primary-color: #b5b18c; /* Light olive/tan color from the palette */
-    --secondary-color: #d5ceb9; /* Cream color from the palette */
-    --accent-color: #d8c9a3; /* Beige color from the palette */
-    --text-color: #5a4e3d; /* Darker brown for text */
-    --light-gray: #EEE; /* Lightest cream for backgrounds */
+    --primary-color: #b5b18c;
+    /* Light olive/tan color from the palette */
+    --secondary-color: #d5ceb9;
+    /* Cream color from the palette */
+    --accent-color: #d8c9a3;
+    /* Beige color from the palette */
+    --text-color: #5a4e3d;
+    /* Darker brown for text */
+    --light-gray: #EEE;
+    /* Lightest cream for backgrounds */
 }
 
 body {
@@ -115,7 +120,8 @@ header nav ul li a:hover::after {
 }
 
 .btn:hover {
-    background-color: #9a9678; /* Darker version of primary color for hover state */
+    background-color: #9a9678;
+    /* Darker version of primary color for hover state */
 }
 
 .small-btn {
@@ -130,7 +136,8 @@ header nav ul li a:hover::after {
 }
 
 .small-btn:hover {
-    background-color: #9a9678; /* Darker version of primary color for hover state */
+    background-color: #9a9678;
+    /* Darker version of primary color for hover state */
 }
 
 /* Featured Products Section */
@@ -198,7 +205,7 @@ header nav ul li a:hover::after {
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
@@ -207,7 +214,6 @@ header nav ul li a:hover::after {
     text-align: center;
     color: var(--text-color);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     border-radius: 8px;
     background-color: white;
@@ -223,8 +229,8 @@ header nav ul li a:hover::after {
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.4s ease;
 }
+
 
 footer {
     text-align: center;
@@ -235,26 +241,44 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 992px) and (min-width: 769px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         padding: 15px;
     }
-    
+
     .logo {
         margin-bottom: 15px;
     }
-    
+
     header nav ul {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .hero {
         padding: 60px 20px;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-grid .testimonial {
+        padding: 15px;
+    }
+
+    .testimonial-grid .testimonial img {
+        max-height: 200px;
     }
 }
